@@ -1,8 +1,6 @@
 # Data Science & Machine Learning
 
-<p align="center">
-  <em>Information Systems M.Sc. Student &#124; Python · Machine Learning · Time-Series Analysis</em>
-</p>
+<p><em>Information Systems M.Sc. Student &#124; Python · Machine Learning · Time-Series Analysis</em></p>
 
 Hi, I'm **Lukas Koch**, a Master's student in Information Systems at **Julius-Maximilians-Universität Würzburg**, Germany.
 
