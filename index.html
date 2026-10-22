@@ -68,6 +68,13 @@ section>h2{font:400 2rem/1.15 var(--serif);margin:0 0 1.5rem}
 .results div{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:.7rem .9rem}
 .results b{display:block;font:400 1.9rem/1.1 var(--serif);color:var(--accent)}
 .results span{font-size:.88rem;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:.75rem 0 1.25rem;font-size:.95rem;background:var(--surface);border:1px solid var(--line)}
+caption{caption-side:top;text-align:left;color:var(--muted);font-size:.88rem;padding:0 0 .4rem}
+th,td{padding:.55rem .8rem;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+thead th{font-weight:700}
+th:first-child,td:first-child{text-align:left}
+tbody th{font-weight:500}
+td.best{font-weight:700;color:var(--accent)}
 .soon{color:var(--muted);font-style:italic}
 
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
@@ -154,13 +161,23 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);f
       </ul>
 
       <h4>Results</h4>
-      <p>XGBoost performed best.</p>
+      <p>All three machine learning models cut the error of the age-based baseline by more than half on the validation set. XGBoost had the best RMSE and C-MAPSS score, and the GRU had the lowest MAE. I chose XGBoost as the final model.</p>
+      <table>
+        <caption>Validation performance (lower is better, best value per column in bold)</caption>
+        <thead><tr><th scope="col">Model</th><th scope="col">MAE</th><th scope="col">RMSE</th><th scope="col">C-MAPSS score</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Age baseline</th><td>22.73</td><td>27.94</td><td>134,393</td></tr>
+          <tr><th scope="row">Random Forest</th><td>9.35</td><td>12.79</td><td>10,534</td></tr>
+          <tr><th scope="row">XGBoost</th><td>9.31</td><td class="best">12.67</td><td class="best">10,083</td></tr>
+          <tr><th scope="row">GRU sequence</th><td class="best">8.27</td><td>12.69</td><td>13,135</td></tr>
+        </tbody>
+      </table>
+      <p>Final XGBoost model on the test set:</p>
       <div class="results">
         <div><b>10.10</b><span>MAE, in cycles</span></div>
         <div><b>13.41</b><span>RMSE, in cycles</span></div>
-        <div><b>93%</b><span>test coverage at a 90% target</span></div>
+        <div><b>93%</b><span>conformal coverage at a 90% target</span></div>
       </div>
-      <img src="assets/img/4_2_validation_model_comparison.png" alt="Validation results comparing the age-based baseline, Random Forest, XGBoost and GRU models for RUL prediction" loading="lazy">
 
       <ul class="tags" aria-label="Technologies">
         <li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>XGBoost</li><li>GRU</li><li>SHAP</li>
@@ -247,8 +264,8 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);f
   <h2>Contact</h2>
   <p>I’m open to internships in data science, machine learning and AI. Write me a short note about the role and I’ll reply soon.</p>
   <ul>
-    <li><a href="mailto:lukas.koch.programming@gmail.com">lukas.koch.programming@gmail.com</a></li>
-    <li><a href="linkedin.com/in/lukas-koch-32b472281">LinkedIn</a></li>
+    <li><a href="mailto:lukas.koch.programming@gmail.com">E-Mail</a></li>
+    <li><a href="https://www.linkedin.com/in/lukas-koch-32b472281">LinkedIn</a></li>
     <li><a href="https://github.com/Bumblerr">GitHub</a></li>
   </ul>
 </section>
