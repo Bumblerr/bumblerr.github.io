@@ -16,7 +16,7 @@ I am currently looking for **internship opportunities in Data Science, Machine L
 
 ### 01 — Predictive Maintenance with NASA C-MAPSS
 
-*Bachelor's Thesis | July 2026*
+*Bachelor's Thesis | July 2026 | Grade: 1.3*
 
 **The Challenge**
 
@@ -47,7 +47,7 @@ Predict the *Remaining Useful Life (RUL)* of simulated aircraft engines using mu
 
 ### 02 - Formula 1 Pit Stop Decision Modeling
 
-*Seminar Paper | December 2025*
+*Seminar Paper | December 2025 | Grade: 1.7*
 
 **The Challenge**
 
@@ -111,7 +111,9 @@ Use historical Formula 1 race data to predict whether a driver will make a pit s
 ### B.Sc. Business Information Systems
 **Julius-Maximilians-Universität Würzburg**
 
-*Completed in July 2026*
+*2023 - 2026*
+
+**Final Grade:** 2.2 (German grading scale)
 
 Bachelor's Thesis: *Predictive Maintenance with Multivariate Sensor Data*
 
