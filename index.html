@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lukas Koch – Data Science & Machine Learning</title>
+<meta name="description" content="Portfolio of Lukas Koch, M.Sc. Information Systems student at the University of Würzburg. Machine learning, time-series analysis and predictive maintenance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f5; --surface:#ffffff; --ink:#142033; --muted:#55627a;
+  --line:#d3d9e3; --accent:#0e7c7b; --band:rgba(14,124,123,.16);
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1724; --surface:#17212f; --ink:#e8edf5; --muted:#9aa7bd;
+        --line:#2a374b; --accent:#4cc3c0; --band:rgba(76,195,192,.18);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:900px;margin:0 auto;padding:0 1.5rem}
+
+header.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 0}
+.brand{display:flex;align-items:center;gap:.75rem;font-weight:700;color:var(--ink);text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;background:var(--line)}
+nav a{margin-left:1.25rem;color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--ink);text-decoration:underline}
+
+.hero{padding:3rem 0 2.5rem}
+.hero h1{font:400 clamp(2.6rem,7vw,4.6rem)/1.02 var(--serif);letter-spacing:-.01em;margin:0 0 1.25rem;max-width:16ch}
+.hero p{max-width:60ch;color:var(--muted);margin:0 0 1rem}
+.hero p strong{color:var(--ink);font-weight:500}
+.status{display:inline-block;margin-top:.5rem;padding:.4rem .9rem;border:1px solid var(--accent);border-radius:999px;color:var(--accent);font-weight:500;font-size:.95rem}
+
+figure.signal{margin:2.5rem 0 0;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1rem 1rem .5rem}
+figure.signal svg{display:block;width:100%;height:auto}
+figure.signal figcaption{font-size:.85rem;color:var(--muted);padding:.25rem .25rem .5rem}
+.s-axis{stroke:var(--line);stroke-width:1}
+.s-true{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:5 5;fill:none}
+.s-band{fill:var(--band)}
+.s-pred{stroke:var(--accent);stroke-width:2.5;fill:none;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;animation:draw 2.2s .3s ease-out forwards}
+.s-lbl{fill:var(--muted);font:12px var(--sans)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.s-pred{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+
+section{padding:3rem 0;border-top:1px solid var(--line)}
+section>h2{font:400 2rem/1.15 var(--serif);margin:0 0 1.5rem}
+.project{display:grid;grid-template-columns:220px 1fr;gap:1rem 2.5rem;margin-bottom:3rem}
+.project:last-child{margin-bottom:0}
+.project h3{font:400 1.6rem/1.2 var(--serif);margin:0 0 .5rem}
+.meta{color:var(--muted);font-size:.95rem}
+.meta p{margin:.15rem 0}
+.body h4{margin:1.25rem 0 .35rem;font-size:1rem}
+.body h4:first-child{margin-top:0}
+.body p,.body ul{margin:0 0 .75rem}
+.body ul{padding-left:1.15rem}
+.body li{margin:.3rem 0}
+.body img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:#fff;margin:.5rem 0 1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0;padding:0;list-style:none}
+.tags li{margin:0;padding:.15rem .6rem;border:1px solid var(--line);border-radius:4px;font-size:.88rem;background:var(--surface)}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;margin:.75rem 0 1rem}
+.results div{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:.7rem .9rem}
+.results b{display:block;font:400 1.9rem/1.1 var(--serif);color:var(--accent)}
+.results span{font-size:.88rem;color:var(--muted)}
+.soon{color:var(--muted);font-style:italic}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
+.skills h3{font-size:1rem;margin:0 0 .5rem}
+.skills ul{margin:0;padding:0;list-style:none;color:var(--muted)}
+.skills li{padding:.15rem 0}
+
+.edu{display:grid;grid-template-columns:140px 1fr;gap:.25rem 2.5rem;margin-bottom:1.5rem}
+.edu .when{color:var(--muted)}
+.edu h3{margin:0;font-size:1.05rem}
+.edu p{margin:.15rem 0;color:var(--muted)}
+
+.contact p{max-width:55ch}
+.contact ul{list-style:none;padding:0;margin:1rem 0 0}
+.contact li{margin:.4rem 0}
+footer{padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+@media (max-width:720px){
+  .project,.edu{grid-template-columns:1fr}
+  nav a:first-child{margin-left:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="#top">
+    <img src="assets/img/headshot_circular.png" alt="Portrait of Lukas Koch">
+    Lukas Koch
+  </a>
+  <nav aria-label="Main">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <h1>I predict when machines will fail.</h1>
+  <p>I’m <strong>Lukas Koch</strong>, a Master’s student in Information Systems at the <strong>University of Würzburg</strong>. I build and evaluate machine learning models for sensor and time-series data, with a focus on explainability and uncertainty.</p>
+  <p>I hold a B.Sc. in Business Information Systems. My interests are data science, predictive analytics and data-driven decision-making.</p>
+  <span class="status">Looking for internships in data science, machine learning and development</span>
+
+  <figure class="signal">
+    <svg viewBox="0 0 720 260" role="img" aria-label="Schematic chart: predicted remaining useful life of an engine falls over time, shown with a shaded uncertainty band around the prediction.">
+      <line class="s-axis" x1="20" y1="240" x2="705" y2="240"/>
+      <line class="s-axis" x1="20" y1="20" x2="20" y2="240"/>
+      <polygon class="s-band" points="20,36 110,33 200,37 260,62 320,80 380,110 440,123 500,152 560,168 620,194 700,210 700,226 620,218 560,196 500,184 440,158 380,146 320,116 260,98 200,69 110,65 20,68"/>
+      <path class="s-true" d="M20 50 L200 50 L700 222"/>
+      <path class="s-pred" d="M20 52 L110 49 L200 53 L260 80 L320 98 L380 128 L440 140 L500 168 L560 182 L620 206 L700 218"/>
+      <text class="s-lbl" x="28" y="256">Operating cycles</text>
+      <text class="s-lbl" x="28" y="16">Remaining useful life</text>
+    </svg>
+    <figcaption>Schematic illustration, not real data: predicted remaining useful life (solid), true value (dashed) and a prediction interval (shaded).</figcaption>
+  </figure>
+</div>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <article class="project">
+    <div>
+      <h3>Predictive maintenance with NASA C-MAPSS</h3>
+      <div class="meta">
+        <p>Bachelor’s thesis</p>
+        <p>July 2026</p>
+        <p>Grade: 1.3</p>
+      </div>
+    </div>
+    <div class="body">
+      <h4>The challenge</h4>
+      <p>Predict the <em>remaining useful life</em> (RUL) of simulated aircraft engines from multivariate sensor data, to support better maintenance decisions.</p>
+
+      <h4>What I did</h4>
+      <ul>
+        <li>Built a reproducible preprocessing and feature engineering pipeline with 30-cycle sliding windows and 102 statistical features.</li>
+        <li>Compared an age-based baseline with Random Forest, XGBoost and a GRU neural network on the C-MAPSS FD001 dataset.</li>
+        <li>Used SHAP to explain predictions and identify the most important sensors.</li>
+        <li>Added conformal prediction to quantify predictive uncertainty.</li>
+        <li>Simulated maintenance decisions based on the predicted RUL.</li>
+      </ul>
+
+      <h4>Results</h4>
+      <p>XGBoost performed best.</p>
+      <div class="results">
+        <div><b>10.10</b><span>MAE, in cycles</span></div>
+        <div><b>13.41</b><span>RMSE, in cycles</span></div>
+        <div><b>93%</b><span>test coverage at a 90% target</span></div>
+      </div>
+      <img src="assets/img/4_2_validation_model_comparison.png" alt="Validation results comparing the age-based baseline, Random Forest, XGBoost and GRU models for RUL prediction" loading="lazy">
+
+      <ul class="tags" aria-label="Technologies">
+        <li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>XGBoost</li><li>GRU</li><li>SHAP</li>
+      </ul>
+      <p><a href="https://github.com/Bumblerr/Bachelor_Thesis">View the thesis repository on GitHub</a></p>
+    </div>
+  </article>
+
+  <article class="project">
+    <div>
+      <h3>Formula 1 pit stop prediction</h3>
+      <div class="meta">
+        <p>Seminar paper</p>
+        <p>December 2025</p>
+        <p>Grade: 1.7</p>
+      </div>
+    </div>
+    <div class="body">
+      <h4>The challenge</h4>
+      <p>Use historical Formula 1 race data to predict whether a driver will pit on the next lap.</p>
+
+      <h4>What I did</h4>
+      <ul>
+        <li>Collected lap-by-lap data from the 2024 season with FastF1 and processed it with Pandas.</li>
+        <li>Engineered features such as tire age, tire compound, lap times, race position, weather and track status.</li>
+        <li>Compared Logistic Regression, Decision Trees, XGBoost and LSTM networks.</li>
+        <li>Tested how much historical race context improves the predictions.</li>
+      </ul>
+
+      <h4>Findings</h4>
+      <p>Sequential race information improves pit stop prediction, and the LSTM benefited most from that context. The models are a starting point for simulating and optimizing pit stop strategy.</p>
+
+      <ul class="tags" aria-label="Technologies">
+        <li>Python</li><li>Pandas</li><li>FastF1</li><li>XGBoost</li><li>LSTM</li>
+      </ul>
+      <p class="soon">Repository coming soon.</p>
+    </div>
+  </article>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div>
+      <h3>Programming and data analysis</h3>
+      <ul><li>Python</li><li>Pandas</li><li>Data preprocessing</li><li>Feature engineering</li><li>Exploratory data analysis</li></ul>
+    </div>
+    <div>
+      <h3>Machine learning</h3>
+      <ul><li>Regression and classification</li><li>Random Forest</li><li>XGBoost</li><li>Model evaluation</li></ul>
+    </div>
+    <div>
+      <h3>Deep learning and time series</h3>
+      <ul><li>LSTM</li><li>GRU</li><li>Sequential modeling</li></ul>
+    </div>
+    <div>
+      <h3>Explainable and reliable AI</h3>
+      <ul><li>SHAP</li><li>Conformal prediction</li><li>Uncertainty quantification</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="edu">
+    <div class="when">2026 – present</div>
+    <div>
+      <h3>M.Sc. Information Systems</h3>
+      <p>University of Würzburg</p>
+    </div>
+  </div>
+  <div class="edu">
+    <div class="when">2023 – 2026</div>
+    <div>
+      <h3>B.Sc. Business Information Systems</h3>
+      <p>University of Würzburg</p>
+      <p>Final grade: 2.2 (German scale, 1.0 is the best)</p>
+      <p>Thesis: Predictive Maintenance with Multivariate Sensor Data (1.3)</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>I’m open to internships in data science, machine learning and AI. Write me a short note about the role and I’ll reply soon.</p>
+  <ul>
+    <li><a href="mailto:DEINE-EMAIL@example.com">DEINE-EMAIL@example.com</a></li>
+    <li><a href="https://www.linkedin.com/in/DEIN-PROFIL">LinkedIn</a></li>
+    <li><a href="https://github.com/Bumblerr">GitHub</a></li>
+  </ul>
+</section>
+</main>
+
+<footer>© 2026 Lukas Koch · Würzburg, Germany</footer>
+
+</div>
+</body>
+</html>
