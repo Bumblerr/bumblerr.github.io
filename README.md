@@ -16,7 +16,7 @@ I am currently looking for **internship opportunities in Data Science, Machine L
 
 ### 01 — Predictive Maintenance with NASA C-MAPSS
 
-_Bachelor's Thesis | July 2026 | Grade: 1.3_
+<p><i>Bachelor's Thesis &#124; July 2026 &#124; Grade: 1.3</i></p>
 
 **The Challenge**
 
