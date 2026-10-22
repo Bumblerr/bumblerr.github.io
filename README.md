@@ -32,6 +32,8 @@ Predict the *Remaining Useful Life (RUL)* of simulated aircraft engines using mu
 
 **Key Results**
 
+![Key Results](assets/img/4_2_validation_model_comparison.png)
+
 - Best-performing model: **XGBoost**
 - Mean Absolute Error (MAE): **10.10 cycles**
 - Root Mean Squared Error (RMSE): **13.41 cycles**
