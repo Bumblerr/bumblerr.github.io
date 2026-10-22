@@ -1,6 +1,6 @@
 # Data Science & Machine Learning
 
-*Information Systems M.Sc. Student | Python · Machine Learning · Time-Series Analysis*
+_Information Systems M.Sc. Student | Python · Machine Learning · Time-Series Analysis_
 
 Hi, I'm **Lukas Koch**, a Master's student in Information Systems at **Julius-Maximilians-Universität Würzburg**, Germany.
 
@@ -16,7 +16,7 @@ I am currently looking for **internship opportunities in Data Science, Machine L
 
 ### 01 — Predictive Maintenance with NASA C-MAPSS
 
-*Bachelor's Thesis | July 2026 | Grade: 1.3*
+_Bachelor's Thesis | July 2026 | Grade: 1.3_
 
 **The Challenge**
 
@@ -47,7 +47,7 @@ Predict the *Remaining Useful Life (RUL)* of simulated aircraft engines using mu
 
 ### 02 - Formula 1 Pit Stop Decision Modeling
 
-*Seminar Paper | December 2025 | Grade: 1.7*
+_Seminar Paper | December 2025 | Grade: 1.7_
 
 **The Challenge**
 
