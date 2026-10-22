@@ -1,6 +1,8 @@
 # Data Science & Machine Learning
 
-_Information Systems M.Sc. Student | Python · Machine Learning · Time-Series Analysis_
+<p align="center">
+  <em>Information Systems M.Sc. Student &#124; Python · Machine Learning · Time-Series Analysis</em>
+</p>
 
 Hi, I'm **Lukas Koch**, a Master's student in Information Systems at **Julius-Maximilians-Universität Würzburg**, Germany.
 
@@ -47,7 +49,7 @@ Predict the *Remaining Useful Life (RUL)* of simulated aircraft engines using mu
 
 ### 02 - Formula 1 Pit Stop Decision Modeling
 
-_Seminar Paper | December 2025 | Grade: 1.7_
+<p><i>Seminar Paper &#124; December 2025 &#124; Grade: 1.7</I></p>
 
 **The Challenge**
 
